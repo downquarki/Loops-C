@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main(void)
+{
+	int number;
+	printf("Insert a number:\n");
+	scanf("%i",&number);
+	int i = 1;
+	printf("Removing zeros...\n\n\n");
+	while (number / i != 0)
+	{
+		if ((number / i)%10 == 0)
+		{
+			int part1, part2;
+			part1 = number % i;
+			part2 = (number-part1) / 10;
+			number = part1 + part2;
+		}
+
+		else 
+			i*=10;
+	}
+	
+	printf("Done!\n%i\n",number);
+}
